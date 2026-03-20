@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rhythm</string>
+    <string name="app_name">ATMOSphere Rhythm Player</string>
     
     <!-- Common Labels -->
     <string name="home">Home</string>
@@ -8,13 +8,13 @@
     <string name="settings">Settings</string>
     
     <!-- Media3 notification configuration -->
-    <string name="media3_notification_channel_name">Rhythm Music</string>
+    <string name="media3_notification_channel_name">ATMOSphere Rhythm</string>
     <string name="media3_notification_channel_description">Media playback controls</string>
     
     <!-- Widget strings -->
-    <string name="widget_description">Rhythm Music Widget - Control Playback with responsive layouts supporting 2x1 to 5x5 grid sizes</string>
-    <string name="widget_description_glance">Rhythm Music - Control Playback with 9 responsive layouts, Material 3 design, and real-time state updates</string>
-    <string name="widget_name_glance">Rhythm Music</string>
+    <string name="widget_description">ATMOSphere Rhythm Widget - Control Playback with responsive layouts supporting 2x1 to 5x5 grid sizes</string>
+    <string name="widget_description_glance">ATMOSphere Rhythm - Control Playback with 9 responsive layouts, Material 3 design, and real-time state updates</string>
+    <string name="widget_name_glance">ATMOSphere Rhythm</string>
     <string name="no_song_playing">No song playing</string>
     <string name="unknown_artist">Unknown artist</string>
     <string name="unknown_album">Unknown album</string>
@@ -1571,7 +1571,7 @@
     
     <!-- Service Notifications -->
     <string name="service_app_updates">App Updates</string>
-    <string name="service_rhythm_music">Rhythm Music</string>
+    <string name="service_rhythm_music">ATMOSphere Rhythm</string>
     <string name="service_starting">Starting service…</string>
     <string name="service_loading_settings">Loading settings…</string>
     <string name="service_setup_components">Setting up components…</string>
