@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">README</h1>
+</header>
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/icon.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/icon.png">
+  <img src="assets/icon_full.png" alt="Rhythm Music Player" width="180" style="border-radius: 24px; margin: 20px 0;">
+</picture>
+
+<h3 id="project-rhythm"><strong>Project Rhythm</strong></h3>
+<p><em>Your Music, Your Rhythm</em></p>
+<hr />
+<p><a href="https://android.com"><img
+src="https://img.shields.io/badge/Platform-Android-34A853?style=for-the-badge&amp;logo=android&amp;logoColor=white&amp;labelColor=1a73e8"
+alt="Platform" /></a> <a
+href="https://android-arsenal.com/api?level=26"><img
+src="https://img.shields.io/badge/API-26%2B-4285f4?style=for-the-badge&amp;logo=android&amp;logoColor=white"
+alt="API Level" /></a> <a href="https://kotlinlang.org/"><img
+src="https://img.shields.io/badge/Kotlin-100%25-7c4dff?style=for-the-badge&amp;logo=kotlin&amp;logoColor=white"
+alt="Kotlin" /></a> <a href="docs/LICENSE"><img
+src="https://img.shields.io/badge/License-GPL%20v3-4285f4?style=for-the-badge"
+alt="License" /></a></p>
+<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img
+src="https://img.shields.io/github/v/release/cromaguy/Rhythm?style=for-the-badge&amp;logo=github&amp;color=673ab7&amp;logoColor=white"
+alt="Release" /></a> <a
+href="https://github.com/cromaguy/Rhythm/releases"><img
+src="https://img.shields.io/github/downloads/cromaguy/Rhythm/total?style=for-the-badge&amp;logo=download&amp;color=00bcd4&amp;logoColor=white"
+alt="Downloads" /></a> <a
+href="https://github.com/cromaguy/Rhythm/stargazers"><img
+src="https://img.shields.io/github/stars/cromaguy/Rhythm?style=for-the-badge&amp;logo=star&amp;color=ffc107&amp;logoColor=white"
+alt="Stars" /></a> <a
+href="https://shields.rbtlog.dev/chromahub.rhythm.app"><img src="https://shields.rbtlog.dev/simple/chromahub.rhythm.app?style=for-the-badge" alt="RB shield"></a></p>
+<hr />
+<h3
+id="globe_with_meridians-website--inbox_tray-download--speech_balloon-telegram--open_book-wiki">🌐
+<a href="https://rhythmweb.vercel.app/">Website</a> | 📥 <a
+href="https://github.com/cromaguy/Rhythm/releases/latest">Download</a> |
+💬 <a href="https://t.me/RhythmSupport">Telegram</a> | 📖 <a
+href="https://github.com/cromaguy/Rhythm/wiki">Wiki</a></h3>
+</div>
+
+<hr />
+<h2 id="musical_note-about-rhythm">🎵 About Rhythm</h2>
+<p>Rhythm is a modern, open-source music player for Android built with
+<strong>Material 3 Expressive</strong> design and powered by Media3
+ExoPlayer 1.9.2. Now at <strong>v4.2</strong>, Rhythm delivers
+professional-grade audio with Bit Perfect playback, EAC3-JOC/Dolby Atmos
+via FFmpeg, a refined expressive UI, multi-select batch library actions,
+and complete privacy.</p>
+<h3 id="sparkles-key-features">✨ Key Features</h3>
+<ul>
+<li>🎨 <strong>Material You</strong> - Dynamic theming with wallpaper
+colors (Android 12+)</li>
+<li>🎵 <strong>Professional Audio</strong> - Media3 ExoPlayer with
+gapless playback, Bit Perfect mode &amp; EAC3-JOC support</li>
+<li>🎤 <strong>Synced Lyrics</strong> - LRCLib integration with
+word-by-word highlighting</li>
+<li>🎛️ <strong>10-Band EQ</strong> - Professional equalizer with 6032+
+AutoEQ device presets</li>
+<li>📊 <strong>Playback Stats</strong> - Comprehensive listening
+statistics and insights</li>
+<li>📱 <strong>Modern Widgets</strong> - Multiple responsive layouts
+with Material 3 design</li>
+<li>🎯 <strong>Format Support</strong> - FLAC, ALAC, MP3, AAC, EAC3-JOC,
+Opus, WAV, OGG, and more</li>
+<li>📂 <strong>Multi-Select</strong> - Batch operations across songs,
+albums, and playlists</li>
+<li>🔮 <strong>Expressive UI</strong> - Refined adaptive shapes,
+components &amp; Material 3 Expressive design</li>
+<li>🔒 <strong>Privacy First</strong> - 100% FOSS, no tracking,
+offline-capable</li>
+</ul>
+<p><strong>System Requirements:</strong> Android 8.0+ (API 26) • 2GB RAM
+• 50MB Storage</p>
+<hr />
+<h2 id="iphone-screenshots">📱 Screenshots</h2>
+<div align="center">
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="assets/ScreenShots/Home.png" alt="Home" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>🏠 Smart Home</b>
+</td>
+<td align="center" width="25%">
+<img src="assets/ScreenShots/Player_2.png" alt="Player" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>▶️ Beautiful Player</b>
+</td>
+<td align="center" width="25%">
+<img src="assets/ScreenShots/Player_Lyrics_View.png" alt="Lyrics" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>🎤 Synced Lyrics</b>
+</td>
+<td align="center" width="25%">
+<img src="assets/ScreenShots/Library_Songs.png" alt="Library" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>📚 Rich Library</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="assets/ScreenShots/Queue.png" alt="Queue" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>📋 Smart Queue</b>
+</td>
+<td align="center">
+<img src="assets/ScreenShots/Search.png" alt="Search" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>🔍 Instant Search</b>
+</td>
+<td align="center">
+<img src="assets/ScreenShots/Settings.png" alt="Settings" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>⚙️ Deep Settings</b>
+</td>
+<td align="center">
+<img src="assets/ScreenShots/Artist.png" alt="Artist" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<br/><b>🎤 Artist Pages</b>
+</td>
+</tr>
+</table>
+</div>
+
+<hr />
+<h2 id="-download--install">� Download &amp; Install</h2>
+<div align="center">
+
+<p><a
+href="https://f-droid.org/packages/chromahub.rhythm.app"><img src="assets/badge-fdroid.png" alt="F-Droid" height="28"></a>
+<a
+href="https://apt.izzysoft.de/fdroid/index/apk/chromahub.rhythm.app"><img src="assets/badge-izzyondroid.png" alt="IzzyOnDroid" height="28"></a>
+<a
+href="https://github.com/cromaguy/Rhythm/releases/latest"><img src="assets/badge-github.png" alt="Download APK" height="28"></a>
+<a
+href="https://www.openapk.net/rhythm/chromahub.rhythm.app/"><img src="assets/badge-openapk.png" alt="OpenAPK" height="28"></a>
+<a
+href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/cromaguy/Rhythm/"><img src="assets/badge-obtainium.png" alt="Obtainium" height="28"></a></p>
+</div>
+
+<h3 id="installation-options">Installation Options</h3>
+<ul>
+<li><strong><a
+href="https://f-droid.org/packages/chromahub.rhythm.app">F-Droid</a></strong>
+- Official F-Droid repository (full features)</li>
+<li><strong><a
+href="https://apt.izzysoft.de/fdroid/index/apk/chromahub.rhythm.app">IzzyOnDroid</a></strong>
+- F-Droid repository for privacy-focused users (full features)</li>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/releases/latest">GitHub
+Releases</a></strong> - Direct APK download (full features)</li>
+<li><strong><a
+href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/cromaguy/Rhythm/">Obtainium</a></strong>
+- Auto-updates from GitHub (full features)</li>
+<li><strong>Google Play Store</strong> - <em>Coming soon!</em>
+(policy-compliant version)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> F-Droid, IzzyOnDroid, and GitHub releases
+include all features including Deezer &amp; YouTube Music artwork,
+LRCLib lyrics, and YouTube Music search. See <a
+href="docs/BUILD_VARIANTS.md">Build Variants</a> for details.</p>
+</blockquote>
+<p>📖 <strong>Detailed installation guide:</strong> See the <a
+href="https://github.com/cromaguy/Rhythm/wiki/Installation-Guide">Installation
+Wiki</a></p>
+<hr />
+<h2 id="-documentation">� Documentation</h2>
+<p>Complete documentation is available in our <a
+href="https://github.com/cromaguy/Rhythm/wiki"><strong>Wiki</strong></a>:</p>
+<ul>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/wiki/Getting-Started">Getting
+Started</a></strong> - First-time setup and basic usage</li>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/wiki/Installation-Guide">Installation
+Guide</a></strong> - Detailed installation instructions</li>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/wiki/Audio-Formats">Audio
+Formats</a></strong> - Supported formats and conversion guide</li>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/wiki/Permissions">Permissions
+Guide</a></strong> - Understanding app permissions</li>
+<li><strong><a
+href="https://github.com/cromaguy/Rhythm/wiki/Troubleshooting">Troubleshooting</a></strong>
+- Common issues and solutions</li>
+</ul>
+<hr />
+<h2 id="-technology-stack">🛠 Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>UI Framework</strong></td>
+<td style="text-align: left;">Jetpack Compose + Material 3 + Glance
+Widgets</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Audio Engine</strong></td>
+<td style="text-align: left;">Media3 ExoPlayer 1.9.2 + FFmpeg Decoder +
+Bit Perfect</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Build System</strong></td>
+<td style="text-align: left;">AGP 8.13.2 + Kotlin 2.3.10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Database</strong></td>
+<td style="text-align: left;">Room + SQLite</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Networking</strong></td>
+<td style="text-align: left;">Retrofit + OkHttp + Ktor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Image Processing</strong></td>
+<td style="text-align: left;">Coil + AndroidX Palette</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Audio Metadata</strong></td>
+<td style="text-align: left;">JAudioTagger</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Async Programming</strong></td>
+<td style="text-align: left;">Kotlin Coroutines + Flow</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Work Management</strong></td>
+<td style="text-align: left;">WorkManager</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Permissions</strong></td>
+<td style="text-align: left;">Accompanist Permissions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navigation</strong></td>
+<td style="text-align: left;">AndroidX Navigation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JSON Processing</strong></td>
+<td style="text-align: left;">Gson</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory Management</strong></td>
+<td style="text-align: left;">LeakCanary (debug) + Desugar JDK Libs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Typography</strong></td>
+<td style="text-align: left;">Geom Font + Material Icons Extended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Language</strong></td>
+<td style="text-align: left;">100% Kotlin</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Architecture</strong></td>
+<td style="text-align: left;">MVVM + Clean Architecture</td>
+</tr>
+</tbody>
+</table>
+<p>📖 <strong>Full tech stack:</strong> See <a
+href="https://github.com/cromaguy/Rhythm/wiki/Technology-Stack">Technology
+Stack</a> in the wiki</p>
+<hr />
+<h2 id="handshake-contributing">🤝 Contributing</h2>
+<p>We welcome contributions! See <a
+href="https://github.com/cromaguy/Rhythm/blob/main/docs/CONTRIBUTING.md">CONTRIBUTING.md</a>
+for guidelines.</p>
+<p><strong>Quick ways to contribute:</strong></p>
+<ul>
+<li>🐛 <a href="https://github.com/cromaguy/Rhythm/issues">Report
+bugs</a></li>
+<li>💡 <a href="https://github.com/cromaguy/Rhythm/issues">Request
+features</a></li>
+<li>👨‍💻 <a href="https://github.com/cromaguy/Rhythm/pulls">Submit pull
+requests</a></li>
+<li>🌍 Help translate the app</li>
+<li>💬 Join <a
+href="https://github.com/cromaguy/Rhythm/discussions">discussions</a></li>
+</ul>
+<hr />
+<h2 id="trophy-credits">🏆 Credits</h2>
+<h3 id="core-team">Core Team</h3>
+<p><strong><a href="https://github.com/cromaguy">Anjishnu
+Nandi</a></strong> - Lead Developer &amp; Project Architect</p>
+<h3 id="contributors">Contributors</h3>
+<ul>
+<li><strong><a href="https://github.com/IzzySoft">Izzy</a></strong> -
+IzzyOnDroid repository management</li>
+<li><strong><a
+href="https://github.com/theovilardo">theovilardo</a></strong> - Project
+PixelPlayer collaboration &amp; Lead Dev</li>
+<li><strong><a href="https://github.com/Paxsenix0">Alex</a></strong> -
+Network API integrations &amp; contributions</li>
+<li><strong><a href="https://github.com/nikutow">nikutow</a></strong> -
+Contributor</li>
+</ul>
+<h3 id="special-thanks">Special Thanks</h3>
+<ul>
+<li><strong>Google Material Design Team</strong> - Design principles and
+Material 3 components</li>
+<li><strong>Android Open Source Project</strong> - Android platform and
+Jetpack libraries</li>
+<li><strong>JetBrains</strong> - Kotlin programming language and
+development tools</li>
+<li><strong>Jetpack Compose Team</strong> - Modern UI framework
+development</li>
+<li><strong>Open Source Community</strong> - Continuous support,
+inspiration, and libraries</li>
+<li><strong>All beta testers and users</strong> - Valuable feedback and
+bug reports</li>
+</ul>
+<hr />
+<h2 id="page_facing_up-license">📄 License</h2>
+<p>This project is licensed under the <strong>GNU General Public License
+v3.0</strong>. See <a href="docs/LICENSE">LICENSE</a> for details.</p>
+<hr />
+<h2 id="link-links">🔗 Links</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Resource</th>
+<th style="text-align: center;">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">🌐 Official Website</td>
+<td style="text-align: center;"><a
+href="https://rhythmweb.vercel.app/">rhythmweb.vercel.app</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">📥 Latest Release</td>
+<td style="text-align: center;"><a
+href="https://github.com/cromaguy/Rhythm/releases/latest">Download
+APK</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">📱 IzzyOnDroid</td>
+<td style="text-align: center;"><a
+href="https://apt.izzysoft.de/fdroid/index/apk/chromahub.rhythm.app">F-Droid
+Repo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">📱 Obtainium</td>
+<td style="text-align: center;"><a
+href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/cromaguy/Rhythm/">Add
+Source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">💬 Telegram</td>
+<td style="text-align: center;"><a
+href="https://t.me/RhythmSupport">Join Community</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">🐛 Issues</td>
+<td style="text-align: center;"><a
+href="https://github.com/cromaguy/Rhythm/issues">Report Bug</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">💡 Discussions</td>
+<td style="text-align: center;"><a
+href="https://github.com/cromaguy/Rhythm/discussions">Forum</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div align="center">
+
+<h2
+id="musical_note-ready-to-transform-your-music-experience-musical_note">🎵
+Ready to Transform Your Music Experience? 🎵</h2>
+<br>
+
+<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img
+src="https://img.shields.io/badge/📱_Download_Now-Get_Latest_APK-4caf50?style=for-the-badge&amp;logoColor=white"
+alt="Download Now" /></a> <a href="https://t.me/RhythmSupport"><img
+src="https://img.shields.io/badge/💬_Join_Telegram-Get_Help-0088cc?style=for-the-badge&amp;logoColor=white"
+alt="Join Community" /></a></p>
+<p><br><br></p>
+<h3 id="sparkles-made-with-heart-by-team-chromahub-sparkles">✨ Made
+with ❤️ by Team ChromaHub ✨</h3>
+<br>
+
+<hr />
+<p><sub>⭐ If you like Rhythm, don't forget to star the repository!
+⭐</sub></p>
+<br>
+
+<p><sub>© 2026 Team ChromaHub. All rights reserved. Licensed under GNU
+General Public License v3.0.</sub></p>
+</div>
+</body>
+</html>

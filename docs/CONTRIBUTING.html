@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CONTRIBUTING</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">CONTRIBUTING</h1>
+</header>
+<h1 id="contributing-to-rhythm">Contributing to Rhythm</h1>
+<p>Thank you for your interest in contributing to Rhythm! We welcome
+contributions from the community. This document provides guidelines and
+information for contributors.</p>
+<h2 id="how-to-contribute">How to Contribute</h2>
+<h3 id="reporting-issues">Reporting Issues</h3>
+<ul>
+<li>Use the <a href="https://github.com/cromaguy/Rhythm/issues">GitHub
+Issues</a> to report bugs or request features</li>
+<li>Provide detailed information including:
+<ul>
+<li>Android version</li>
+<li>Device model</li>
+<li>Steps to reproduce</li>
+<li>Expected vs actual behavior</li>
+<li>Screenshots/logs if applicable</li>
+</ul></li>
+</ul>
+<h3 id="code-contributions">Code Contributions</h3>
+<ol type="1">
+<li><strong>Fork the repository</strong> on GitHub</li>
+<li><strong>Clone your fork</strong> locally</li>
+<li><strong>Create a feature branch</strong> from <code>main</code></li>
+<li><strong>Make your changes</strong> following the coding
+standards</li>
+<li><strong>Test your changes</strong> thoroughly</li>
+<li><strong>Commit your changes</strong> with clear, descriptive
+messages</li>
+<li><strong>Push to your fork</strong></li>
+<li><strong>Create a Pull Request</strong> with a clear description</li>
+</ol>
+<h3 id="development-setup">Development Setup</h3>
+<ol type="1">
+<li>Ensure you have Android Studio Arctic Fox or later</li>
+<li>Clone the repository</li>
+<li>Open the project in Android Studio</li>
+<li>Build and run the app on a device/emulator</li>
+</ol>
+<h3 id="coding-standards">Coding Standards</h3>
+<ul>
+<li>Follow Kotlin coding conventions</li>
+<li>Use meaningful variable and function names</li>
+<li>Add comments for complex logic</li>
+<li>Follow the existing code style and architecture patterns</li>
+<li>Write tests for new features</li>
+</ul>
+<h3 id="commit-messages">Commit Messages</h3>
+<p>Use conventional commit format:</p>
+<pre><code>type(scope): description
+
+[optional body]
+
+[optional footer]</code></pre>
+<p>Types:</p>
+<ul>
+<li><code>feat</code>: New feature</li>
+<li><code>fix</code>: Bug fix</li>
+<li><code>docs</code>: Documentation</li>
+<li><code>style</code>: Code style changes</li>
+<li><code>refactor</code>: Code refactoring</li>
+<li><code>test</code>: Testing</li>
+<li><code>chore</code>: Maintenance</li>
+</ul>
+<h3 id="pull-request-guidelines">Pull Request Guidelines</h3>
+<ul>
+<li>Provide a clear description of the changes</li>
+<li>Reference any related issues</li>
+<li>Ensure all tests pass</li>
+<li>Update documentation if needed</li>
+<li>Keep PRs focused on a single feature/fix</li>
+</ul>
+<h3 id="testing">Testing</h3>
+<ul>
+<li>Test on multiple Android versions (API 26+)</li>
+<li>Test on different screen sizes</li>
+<li>Verify audio playback functionality</li>
+<li>Check for memory leaks and performance issues</li>
+</ul>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>This project follows a code of conduct to ensure a welcoming
+environment for all contributors. See <a
+href="https://github.com/cromaguy/Rhythm/blob/main/docs/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md</a>
+for details.</p>
+<h2 id="license">License</h2>
+<p>By contributing to this project, you agree that your contributions
+will be licensed under the same license as the project (GNU General
+Public License v3.0).</p>
+<h2 id="questions">Questions?</h2>
+<p>If you have questions about contributing, feel free to:</p>
+<ul>
+<li>Open a <a
+href="https://github.com/cromaguy/Rhythm/discussions">discussion</a></li>
+<li>Join our <a href="https://t.me/RhythmSupport">Telegram
+group</a></li>
+</ul>
+<p>Thank you for contributing to Rhythm! 🎵</p>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>BUILD_VARIANTS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">BUILD_VARIANTS</h1>
+</header>
+<h1 id="build-variants-documentation">Build Variants Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>Rhythm uses Android build variants (product flavors) to create
+different builds for different distribution channels while maintaining a
+single codebase.</p>
+<h2 id="quick-reference">Quick Reference</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build commands</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleFdroidRelease      <span class="co"># For F-Droid</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleGithubRelease      <span class="co"># For GitHub Releases</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># List all build variants</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> tasks <span class="at">--all</span> <span class="kw">|</span> <span class="fu">grep</span> assemble</span></code></pre></div>
+<h2 id="build-configuration">Build Configuration</h2>
+<h3 id="flavor-dimension-distribution">Flavor Dimension:
+<code>distribution</code></h3>
+<p>All flavors belong to the <code>distribution</code> dimension,
+ensuring they're mutually exclusive.</p>
+<h3 id="product-flavors">Product Flavors</h3>
+<h4 id="1-fdroid">1. <code>fdroid</code></h4>
+<p><strong>Purpose:</strong> F-Droid repository distribution<br />
+<strong>Package:</strong> <code>chromahub.rhythm.app</code><br />
+<strong>Version Suffix:</strong> <code>-fdroid</code></p>
+<p><strong>BuildConfig Flags:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ENABLE_YOUTUBE_MUSIC <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ENABLE_SPOTIFY_CANVAS <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ENABLE_APPLE_MUSIC <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ENABLE_DEEZER <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ENABLE_LRCLIB <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ENABLE_SPOTIFY_SEARCH <span class="op">=</span> <span class="kw">true</span></span></code></pre></div>
+<p><strong>Default Settings:</strong> APIs and auto-updates disabled by
+default (opt-in for F-Droid compliance)</p>
+<p><strong>Philosophy:</strong> FOSS users expect maximum functionality.
+F-Droid isn't bound by corporate app store policies, but opt-in defaults
+ensure compliance.</p>
+<hr />
+<h4 id="2-github">2. <code>github</code></h4>
+<p><strong>Purpose:</strong> Direct GitHub releases<br />
+<strong>Package:</strong> <code>chromahub.rhythm.app</code><br />
+<strong>Version Suffix:</strong> <code>-gh</code></p>
+<p><strong>BuildConfig Flags:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ENABLE_YOUTUBE_MUSIC <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ENABLE_SPOTIFY_CANVAS <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ENABLE_APPLE_MUSIC <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ENABLE_DEEZER <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ENABLE_LRCLIB <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ENABLE_SPOTIFY_SEARCH <span class="op">=</span> <span class="kw">true</span></span></code></pre></div>
+<p><strong>Default Settings:</strong> APIs and auto-updates enabled by
+default (opt-out available)</p>
+<p><strong>Use Case:</strong> Users who download directly from GitHub
+releases get the full-featured experience.</p>
+<hr />
+<h2 id="how-buildconfig-flags-work">How BuildConfig Flags Work</h2>
+<h3 id="1-compile-time-conditional-compilation">1. Compile-Time
+Conditional Compilation</h3>
+<p>Flags are defined in <code>app/build.gradle.kts</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>buildConfigField<span class="op">(</span><span class="st">&quot;boolean&quot;</span><span class="op">,</span> <span class="st">&quot;ENABLE_YOUTUBE_MUSIC&quot;</span><span class="op">,</span> <span class="st">&quot;true&quot;</span><span class="op">)</span></span></code></pre></div>
+<h3 id="2-runtime-api-initialization">2. Runtime API Initialization</h3>
+<p>APIs are initialized conditionally in
+<code>NetworkClient.kt</code>:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">val</span> <span class="va">ytmusicApiService</span><span class="op">:</span> YTMusicApiService<span class="op">?</span> <span class="op">=</span> <span class="cf">if</span> <span class="op">(</span>BuildConfig<span class="op">.</span>ENABLE_YOUTUBE_MUSIC<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ytmusicRetrofit<span class="op">.</span>create<span class="op">(</span>YTMusicApiService<span class="op">::</span><span class="kw">class</span>.java)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>} else null</span></code></pre></div>
+<h3 id="3-settings-ui-adaptation">3. Settings UI Adaptation</h3>
+<p>UI components check BuildConfig before rendering:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>BuildConfig<span class="op">.</span>ENABLE_YOUTUBE_MUSIC<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ApiServiceRow<span class="op">(</span>title <span class="op">=</span> <span class="st">&quot;YouTube Music&quot;</span><span class="op">,</span> <span class="op">...)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="4-runtime-feature-checks">4. Runtime Feature Checks</h3>
+<p>Code checks both BuildConfig AND user settings:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fun</span> <span class="fu">isYTMusicApiEnabled</span><span class="op">():</span> <span class="dt">Boolean</span> <span class="op">=</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    BuildConfig<span class="op">.</span>ENABLE_YOUTUBE_MUSIC <span class="op">&amp;&amp;</span> <span class="op">(</span>appSettings<span class="op">?.</span>ytMusicApiEnabled<span class="op">?.</span>value <span class="op">?:</span> <span class="kw">false</span><span class="op">)</span></span></code></pre></div>
+<p><strong>Default Settings by Variant:</strong></p>
+<ul>
+<li><strong>F-Droid:</strong> APIs and auto-updates disabled by default
+(opt-in for compliance)</li>
+<li><strong>GitHub:</strong> APIs and auto-updates enabled by default
+(opt-out available)</li>
+</ul>
+<p><strong>This ensures:</strong></p>
+<ul>
+<li>Build variants properly control feature availability</li>
+<li>Users can toggle features on/off within allowed limits</li>
+<li>F-Droid compliance through opt-in defaults</li>
+<li>Single codebase maintains all variants</li>
+</ul>
+<hr />
+<h2 id="variant-specific-resources">Variant-Specific Resources</h2>
+<h3 id="directory-structure">Directory Structure</h3>
+<pre><code>app/src/
+├── main/                      # Shared code and resources
+├── fdroid/
+│   └── res/
+│       └── values/
+│           └── config.xml
+└── github/
+    └── res/
+        └── values/
+            └── config.xml</code></pre>
+<h3 id="resource-flags">Resource Flags</h3>
+<p>Each variant has a <code>config.xml</code> with boolean
+resources:</p>
+<p><strong>fdroid/res/values/config.xml:</strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">bool</span> <span class="ot">name=</span><span class="st">&quot;feature_youtube_music_available&quot;</span>&gt;true&lt;/<span class="kw">bool</span>&gt;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">bool</span> <span class="ot">name=</span><span class="st">&quot;feature_spotify_canvas_available&quot;</span>&gt;true&lt;/<span class="kw">bool</span>&gt;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">string</span> <span class="ot">name=</span><span class="st">&quot;distribution_channel&quot;</span>&gt;F-Droid&lt;/<span class="kw">string</span>&gt;</span></code></pre></div>
+<p><strong>github/res/values/config.xml:</strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">bool</span> <span class="ot">name=</span><span class="st">&quot;feature_youtube_music_available&quot;</span>&gt;true&lt;/<span class="kw">bool</span>&gt;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">bool</span> <span class="ot">name=</span><span class="st">&quot;feature_spotify_canvas_available&quot;</span>&gt;true&lt;/<span class="kw">bool</span>&gt;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">string</span> <span class="ot">name=</span><span class="st">&quot;distribution_channel&quot;</span>&gt;GitHub&lt;/<span class="kw">string</span>&gt;</span></code></pre></div>
+<hr />
+<h2 id="build-output">Build Output</h2>
+<h3 id="apk-naming-convention">APK Naming Convention</h3>
+<pre><code>Rhythm-{versionName}-{suffix}-{flavor}-{buildType}.apk</code></pre>
+<p><strong>Examples:</strong></p>
+<pre><code>Rhythm-4.0.312.858-fdroid-fdroid-release.apk
+Rhythm-4.0.312.858-gh-github-release.apk</code></pre>
+<h3 id="output-locations">Output Locations</h3>
+<p><strong>APKs:</strong></p>
+<pre><code>app/build/outputs/apk/fdroid/release/
+app/build/outputs/apk/github/release/</code></pre>
+<p><strong>App Bundles (AAB):</strong></p>
+<pre><code>app/build/outputs/bundle/fdroidRelease/app-fdroid-release.aab
+app/build/outputs/bundle/githubRelease/app-github-release.aab</code></pre>
+<hr />
+<h2 id="testing-variants">Testing Variants</h2>
+<h3 id="build-all-variants">Build All Variants</h3>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Release builds</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleRelease</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Debug builds  </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleDebug</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Specific variant</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleFdroidDebug</span></code></pre></div>
+<h3 id="install-specific-variant">Install Specific Variant</h3>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install F-Droid debug</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> installFdroidDebug</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install GitHub release</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> install app/build/outputs/apk/github/release/Rhythm-<span class="pp">*</span>.apk</span></code></pre></div>
+<h3 id="verify-buildconfig-values">Verify BuildConfig Values</h3>
+<p>After building, check generated BuildConfig:</p>
+<p><strong>F-Droid:</strong></p>
+<pre><code>app/build/generated/source/buildConfig/fdroid/release/chromahub/rhythm/app/BuildConfig.java</code></pre>
+<p>Should contain:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">boolean</span> ENABLE_YOUTUBE_MUSIC <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">boolean</span> ENABLE_SPOTIFY_CANVAS <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
+<p><strong>GitHub:</strong></p>
+<pre><code>app/build/generated/source/buildConfig/github/release/chromahub/rhythm/app/BuildConfig.java</code></pre>
+<p>Should contain:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">boolean</span> ENABLE_YOUTUBE_MUSIC <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">boolean</span> ENABLE_SPOTIFY_CANVAS <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
+<hr />
+<h2 id="cicd-integration">CI/CD Integration</h2>
+<h3 id="github-actions-example">GitHub Actions Example</h3>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Build All Variants</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up JDK 17</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-java@v3</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">java-version</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;17&#39;</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="at">          </span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build F-Droid variant</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> ./gradlew assembleFdroidRelease</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build GitHub variant</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">run</span><span class="kw">:</span><span class="at"> ./gradlew assembleGithubRelease</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="at">        </span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Upload artifacts</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/upload-artifact@v3</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">name</span><span class="kw">:</span><span class="at"> apk-variants</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">path</span><span class="kw">:</span><span class="at"> app/build/outputs/apk/**/release/*.apk</span></span></code></pre></div>
+<h3 id="f-droid-metadata">F-Droid Metadata</h3>
+<p>Add to <code>.fdroid.yml</code> or <code>metadata/*.yml</code>:</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Builds</span><span class="kw">:</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">versionName</span><span class="kw">:</span><span class="at"> </span><span class="fl">4.0.312.858</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">versionCode</span><span class="kw">:</span><span class="at"> </span><span class="dv">40312858</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">gradle</span><span class="kw">:</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> fdroid</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">    # F-Droid will automatically use the fdroid flavor</span></span></code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="issue-wrong-variant-built">Issue: Wrong variant built</h3>
+<p><strong>Symptom:</strong> APK has unexpected features
+enabled/disabled<br />
+<strong>Solution:</strong> Verify you ran the correct assemble task
+(e.g., <code>./gradlew assembleFdroidRelease</code>)</p>
+<h3 id="issue-ui-shows-disabled-features">Issue: UI shows disabled
+features</h3>
+<p><strong>Symptom:</strong> F-Droid build hides YouTube Music
+settings<br />
+<strong>Solution:</strong> Check
+<code>BuildConfig.ENABLE_YOUTUBE_MUSIC</code> in generated files</p>
+<h3 id="issue-null-pointer-when-calling-api">Issue: Null pointer when
+calling API</h3>
+<p><strong>Symptom:</strong> Crash when accessing
+<code>ytmusicApiService</code><br />
+<strong>Solution:</strong> Ensure null-safe access:</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>ytmusicApiService <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    ytmusicApiService<span class="op">.</span>search<span class="op">(...)</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="issue-build-fails-with-variant-not-found">Issue: Build fails
+with variant not found</h3>
+<p><strong>Symptom:</strong>
+<code>Task 'assembleFdroid' not found</code><br />
+<strong>Solution:</strong> Use full variant name:
+<code>assembleFdroidRelease</code> or
+<code>assembleFdroidDebug</code></p>
+<hr />
+<h2 id="maintenance">Maintenance</h2>
+<h3 id="adding-a-new-build-variant">Adding a New Build Variant</h3>
+<ol type="1">
+<li><strong>Add flavor in
+<code>app/build.gradle.kts</code>:</strong></li>
+</ol>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode kotlin"><code class="sourceCode kotlin"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>create<span class="op">(</span><span class="st">&quot;newvariant&quot;</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    dimension <span class="op">=</span> <span class="st">&quot;distribution&quot;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    applicationId <span class="op">=</span> <span class="st">&quot;chromahub.rhythm.app&quot;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    buildConfigField<span class="op">(</span><span class="st">&quot;boolean&quot;</span><span class="op">,</span> <span class="st">&quot;ENABLE_YOUTUBE_MUSIC&quot;</span><span class="op">,</span> <span class="st">&quot;true&quot;</span><span class="op">)</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    versionNameSuffix <span class="op">=</span> <span class="st">&quot;-new&quot;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ol start="2" type="1">
+<li><strong>Create variant directory:</strong></li>
+</ol>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> app/src/newvariant/res/values</span></code></pre></div>
+<ol start="3" type="1">
+<li><strong>Add config.xml:</strong></li>
+</ol>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span> <span class="ot">encoding=</span><span class="st">&quot;utf-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">resources</span>&gt;</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">string</span> <span class="ot">name=</span><span class="st">&quot;distribution_channel&quot;</span>&gt;New Variant&lt;/<span class="kw">string</span>&gt;</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">resources</span>&gt;</span></code></pre></div>
+<ol start="4" type="1">
+<li><strong>Test build:</strong></li>
+</ol>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./gradlew</span> assembleNewvariantRelease</span></code></pre></div>
+<h3 id="removing-a-build-variant">Removing a Build Variant</h3>
+<ol type="1">
+<li>Delete flavor block from <code>build.gradle.kts</code></li>
+<li>Remove <code>app/src/variantname/</code> directory</li>
+<li>Sync Gradle: <code>./gradlew --refresh-dependencies</code></li>
+</ol>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-version-consistency">1. Version Consistency</h3>
+<ul>
+<li>All variants share the same <code>versionCode</code> and
+<code>versionName</code></li>
+<li>Only <code>versionNameSuffix</code> differs for logging</li>
+</ul>
+<h3 id="2-feature-parity">2. Feature Parity</h3>
+<ul>
+<li>F-Droid and GitHub should always have identical features</li>
+</ul>
+<h3 id="3-testing">3. Testing</h3>
+<ul>
+<li>Test each variant separately before release</li>
+<li>Ensure disabled features don't appear in UI</li>
+<li>Verify API calls are actually blocked</li>
+</ul>
+<h3 id="4-documentation">4. Documentation</h3>
+<ul>
+<li>Keep this README updated when adding/removing features</li>
+<li>Document any variant-specific behavior</li>
+</ul>
+<hr />
+<h2 id="faq">FAQ</h2>
+<p><strong>Q: Can I install multiple variants on the same
+device?</strong><br />
+A: No, they share the same <code>applicationId</code>. Use debug builds
+with different IDs for testing.</p>
+<p><strong>Q: Which variant should I use for local
+development?</strong><br />
+A: Use <code>fdroid</code> or <code>github</code> debug builds for full
+feature access during development.</p>
+<p><strong>Q: How do I know which variant is installed?</strong><br />
+A: Check Settings → About → Build Info or check version suffix in
+logs.</p>
+<p><strong>Q: Can users switch between variants?</strong><br />
+A: No, they must uninstall and reinstall a different variant. Data won't
+transfer.</p>
+<p><strong>Q: Why not use separate apps with different package
+names?</strong><br />
+A: Single package name simplifies distribution across different
+channels.</p>
+<hr />
+<h2 id="related-documentation">Related Documentation</h2>
+<ul>
+<li><a href="../wiki/Build-Instructions.md">Build Instructions</a></li>
+<li><a href="CONTRIBUTING.md">Contributing Guide</a></li>
+</ul>
+<hr />
+<p><em>Last Updated: January 19, 2026</em><br />
+<em>Rhythm Music Player Build System Documentation</em></p>
+</body>
+</html>
