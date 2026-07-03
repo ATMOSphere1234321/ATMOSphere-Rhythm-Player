@@ -6,152 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>README</title>
   <style>
-
-html {
-color: #1a1a1a;
-background-color: #fdfdfd;
-}
-body {
-margin: 0 auto;
-max-width: 36em;
-padding-left: 50px;
-padding-right: 50px;
-padding-top: 50px;
-padding-bottom: 50px;
-hyphens: auto;
-overflow-wrap: break-word;
-text-rendering: optimizeLegibility;
-font-kerning: normal;
-}
-@media (max-width: 600px) {
-body {
-font-size: 0.9em;
-padding: 12px;
-}
-h1 {
-font-size: 1.8em;
-}
-}
-@media print {
-html {
-background-color: white;
-}
-body {
-background-color: transparent;
-color: black;
-font-size: 12pt;
-}
-p, h2, h3 {
-orphans: 3;
-widows: 3;
-}
-h2, h3, h4 {
-page-break-after: avoid;
-}
-}
-p {
-margin: 1em 0;
-}
-a {
-color: #1a1a1a;
-}
-a:visited {
-color: #1a1a1a;
-}
-img {
-max-width: 100%;
-}
-svg {
-height: auto;
-max-width: 100%;
-}
-h1, h2, h3, h4, h5, h6 {
-margin-top: 1.4em;
-}
-h5, h6 {
-font-size: 1em;
-font-style: italic;
-}
-h6 {
-font-weight: normal;
-}
-ol, ul {
-padding-left: 1.7em;
-margin-top: 1em;
-}
-li > ol, li > ul {
-margin-top: 0;
-}
-blockquote {
-margin: 1em 0 1em 1.7em;
-padding-left: 1em;
-border-left: 2px solid #e6e6e6;
-color: #606060;
-}
-code {
-font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-font-size: 85%;
-margin: 0;
-hyphens: manual;
-}
-pre {
-margin: 1em 0;
-overflow: auto;
-}
-pre code {
-padding: 0;
-overflow: visible;
-overflow-wrap: normal;
-}
-.sourceCode {
-background-color: transparent;
-overflow: visible;
-}
-hr {
-border: none;
-border-top: 1px solid #1a1a1a;
-height: 1px;
-margin: 1em 0;
-}
-table {
-margin: 1em 0;
-border-collapse: collapse;
-width: 100%;
-overflow-x: auto;
-display: block;
-font-variant-numeric: lining-nums tabular-nums;
-}
-table caption {
-margin-bottom: 0.75em;
-}
-tbody {
-margin-top: 0.5em;
-border-top: 1px solid #1a1a1a;
-border-bottom: 1px solid #1a1a1a;
-}
-th {
-border-top: 1px solid #1a1a1a;
-padding: 0.25em 0.5em 0.25em 0.5em;
-}
-td {
-padding: 0.125em 0.5em 0.25em 0.5em;
-}
-header {
-margin-bottom: 4em;
-text-align: center;
-}
-#TOC li {
-list-style: none;
-}
-#TOC ul {
-padding-left: 1.3em;
-}
-#TOC > ul {
-padding-left: 0;
-}
-#TOC a:not(:hover) {
-text-decoration: none;
-}
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -166,6 +20,353 @@ margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+
+:root {
+
+--od-bg: #f5f8ff; 
+--od-surface: #ffffff; 
+--od-surface-warm: #eaf1ff; 
+--od-surface-muted: #f4f6fb; 
+
+--od-fg: #101828; 
+--od-fg-2: #344054; 
+--od-muted: #667085; 
+
+--od-border: #d7e0ef; 
+--od-border-soft: #edf2f8; 
+
+--od-accent: #2563eb; 
+--od-accent-on: #ffffff; 
+--od-accent-hover: #205fd6; 
+--od-accent-tint: #eaf1ff; 
+
+--od-success: #16a34a; 
+--od-warn: #f59e0b; 
+--od-danger: #ef4444; 
+
+
+--od-font-body: "Source Sans 3", "Source Sans Pro", "Source Sans", Inter,
+-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+"Helvetica Neue", Arial, "Noto Sans", "DejaVu Sans", sans-serif,
+"Apple Color Emoji", "Segoe UI Emoji";
+--od-font-mono: "SF Mono", "JetBrains Mono", "Fira Code", ui-monospace,
+SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+--od-leading-body: 1.65;
+--od-leading-tight: 1.2;
+
+--od-radius-xs: 4px;
+--od-radius-sm: 6px;
+--od-radius: 8px;
+--od-radius-lg: 12px;
+--od-radius-pill: 9999px;
+
+--od-elev-ring: 0 0 0 1px var(--od-border);
+--od-elev-raised: 0 18px 48px rgba(16, 24, 40, 0.10);
+--od-focus-ring: 0 0 0 4px rgba(37, 99, 235, 0.22);
+
+--doc-fg: var(--od-fg);
+--doc-fg-muted: var(--od-muted);
+--doc-bg: var(--od-bg);
+--doc-surface: var(--od-surface);
+--doc-accent: var(--od-accent);
+--doc-accent-soft: var(--od-accent-tint);
+--doc-border: var(--od-border);
+--doc-border-soft: var(--od-border-soft);
+--doc-code-bg: #eef2fb;
+--doc-code-fg: #1d2433;
+--doc-quote-bar: var(--od-accent);
+--doc-quote-bg: #f4f7fe;
+--doc-table-stripe:#f7f9fe;
+}
+
+html {
+font-size: 16px;
+}
+body {
+font-family: var(--od-font-body);
+color: var(--doc-fg);
+background: var(--doc-bg);
+line-height: var(--od-leading-body);
+font-size: 1rem;
+max-width: 58rem;
+margin: 2.5rem auto;
+padding: 2.25rem 2.5rem 4rem;
+background-clip: padding-box;
+border-radius: var(--od-radius-lg);
+-webkit-text-size-adjust: 100%;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 62rem) {
+body {
+background: var(--doc-surface);
+box-shadow: var(--od-elev-raised);
+}
+html { background: var(--doc-bg); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--od-font-body);
+font-weight: 600;
+line-height: var(--od-leading-tight);
+letter-spacing: -0.011em;
+margin: 1.8em 0 0.6em;
+color: var(--od-fg);
+}
+h1 {
+font-size: 2.1rem;
+font-weight: 700;
+letter-spacing: -0.022em;
+border-bottom: 2px solid var(--doc-border);
+padding-bottom: 0.32em;
+margin-top: 0;
+}
+h2 {
+font-size: 1.55rem;
+border-bottom: 1px solid var(--doc-border-soft);
+padding-bottom: 0.25em;
+}
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1.0rem; color: var(--od-fg-2); }
+h6 { font-size: 0.92rem; color: var(--doc-fg-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+h3.status-group-heading {
+margin-top: 1.6em;
+padding: 0.4em 0.7em;
+background: var(--doc-accent-soft);
+color: var(--od-fg);
+border-left: 4px solid var(--doc-accent);
+border-radius: var(--od-radius-sm);
+font-size: 1.15rem;
+}
+
+p { margin: 0.75em 0; }
+a {
+color: var(--doc-accent);
+text-decoration: none;
+border-bottom: 1px solid transparent;
+transition: border-color 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+a:hover { color: var(--od-accent-hover); border-bottom-color: currentColor; }
+a:focus-visible {
+outline: none;
+border-radius: var(--od-radius-xs);
+box-shadow: var(--od-focus-ring);
+}
+strong { font-weight: 600; color: var(--od-fg); }
+em { font-style: italic; }
+hr {
+border: 0;
+border-top: 1px solid var(--doc-border);
+margin: 2.25em 0;
+}
+blockquote {
+margin: 1.1em 0;
+padding: 0.6em 1.2em;
+color: var(--od-fg-2);
+border-left: 4px solid var(--doc-quote-bar);
+background: var(--doc-quote-bg);
+border-radius: 0 var(--od-radius-sm) var(--od-radius-sm) 0;
+}
+ul, ol { padding-left: 1.6em; margin: 0.75em 0; }
+li { margin: 0.3em 0; }
+li::marker { color: var(--doc-fg-muted); }
+
+code, pre, kbd, samp {
+font-family: var(--od-font-mono);
+font-size: 0.88em;
+}
+code {
+background: var(--doc-code-bg);
+color: var(--doc-code-fg);
+padding: 0.15em 0.42em;
+border-radius: var(--od-radius-xs);
+border: 1px solid var(--doc-border-soft);
+}
+pre {
+background: var(--doc-code-bg);
+color: var(--doc-code-fg);
+padding: 1em 1.2em;
+border-radius: var(--od-radius);
+overflow-x: auto;
+line-height: 1.5;
+border: 1px solid var(--doc-border);
+}
+pre code {
+background: transparent;
+padding: 0;
+border: 0;
+border-radius: 0;
+}
+kbd {
+background: var(--od-surface);
+color: var(--od-fg-2);
+padding: 0.1em 0.45em;
+border-radius: var(--od-radius-xs);
+border: 1px solid var(--doc-border);
+box-shadow: 0 1px 0 var(--doc-border);
+}
+
+table {
+border-collapse: separate;
+border-spacing: 0;
+width: 100%;
+margin: 1.3em 0;
+font-size: 0.93rem;
+display: block;
+overflow-x: auto;
+border: 1px solid var(--doc-border);
+border-radius: var(--od-radius-sm);
+}
+thead th {
+background: var(--doc-accent-soft);
+color: var(--od-fg);
+font-weight: 600;
+text-align: left;
+}
+th, td {
+border-bottom: 1px solid var(--doc-border-soft);
+border-right: 1px solid var(--doc-border-soft);
+padding: 0.55em 0.8em;
+vertical-align: top;
+
+overflow-wrap: break-word;
+word-break: normal;
+white-space: normal;
+hyphens: auto;
+}
+tr > th:last-child, tr > td:last-child { border-right: 0; }
+tbody tr:last-child > td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: var(--doc-table-stripe); }
+
+
+td.cell-type-bug { background: #fdecec; } 
+td.cell-type-feature { background: #e7f6ec; } 
+td.cell-type-task { background: #eef2fb; } 
+
+td.cell-status-queued { background: #eef1f6; } 
+td.cell-status-in-progress { background: #e7eefc; } 
+td.cell-status-ready-for-testing { background: #e3eefe; } 
+td.cell-status-in-testing { background: #d8e6fd; } 
+td.cell-status-reopened { background: #fdeccd; } 
+td.cell-status-operator-blocked { background: #fdd9d9; } 
+td.cell-status-fixed { background: #d8f3e2; } 
+td.cell-status-obsolete { background: #e3e6ec; color: var(--doc-fg-muted); } 
+
+tr.row-status-fixed { background: #f1faf4; }
+tr.row-status-fixed td { border-color: #cfead8; }
+tr.row-status-operator-blocked { background: #fdf4f4; }
+tr.row-status-operator-blocked td { border-color: #f4cccc; }
+
+tr.row-status-obsolete {
+background: #e3e6ec;
+color: var(--doc-fg-muted);
+}
+tr.row-status-obsolete td {
+text-decoration: line-through;
+border-color: #d1d5dd;
+}
+
+tr.row-status-obsolete td.cell-status-obsolete {
+text-decoration: line-through;
+}
+
+.tag-done, .tag-completed, .tag-in-progress, .tag-future, .tag-planned {
+display: inline-block;
+padding: 0.12em 0.66em;
+border-radius: var(--od-radius-pill);
+font-size: 0.82em;
+font-weight: 600;
+line-height: 1.5;
+letter-spacing: 0.01em;
+white-space: nowrap;
+border: 1px solid transparent;
+vertical-align: baseline;
+}
+
+.tag-done, .tag-completed {
+background: #e7f6ec;
+color: #14773a;
+border-color: #bfe6cd;
+}
+
+.tag-in-progress {
+background: #e7eefc;
+color: #1c4fce;
+border-color: #c4d6fb;
+}
+
+.tag-future, .tag-planned {
+background: #fdf3d3;
+color: #8a6400;
+border-color: #f0dca0;
+}
+
+img {
+max-width: 100%;
+height: auto;
+border-radius: var(--od-radius-sm);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+:root {
+--od-bg: #0f1420;
+--od-surface: #161c2b;
+--od-surface-warm: #1c2740;
+--od-surface-muted: #141a28;
+--od-fg: #e6ebf4;
+--od-fg-2: #c2cad8;
+--od-muted: #8b94a7;
+--od-border: #2a3346;
+--od-border-soft: #1f2839;
+--od-accent: #5b8def; 
+--od-accent-on: #0f1420;
+--od-accent-hover: #79a3f4;
+--od-accent-tint: #19233a;
+--od-success: #4caf72;
+--od-warn: #e0a13a;
+--od-danger: #e0655f;
+--od-elev-ring: 0 0 0 1px var(--od-border);
+--od-elev-raised: 0 18px 48px rgba(0, 0, 0, 0.5);
+--od-focus-ring: 0 0 0 4px rgba(91, 141, 239, 0.32);
+--doc-code-bg: #11192a;
+--doc-code-fg: #d7def0;
+--doc-quote-bg: #161f33;
+--doc-table-stripe:#141b29;
+}
+
+td.cell-type-bug { background: #2a1110; }
+td.cell-type-feature { background: #0f2a18; }
+td.cell-type-task { background: #141f38; }
+
+td.cell-status-queued { background: #1c2330; }
+td.cell-status-in-progress { background: #14233f; }
+td.cell-status-ready-for-testing { background: #14223c; }
+td.cell-status-in-testing { background: #182a4a; }
+td.cell-status-reopened { background: #2c2008; }
+td.cell-status-operator-blocked { background: #2f0f0d; }
+td.cell-status-fixed { background: #0f2a18; }
+td.cell-status-obsolete { background: #20242e; color: var(--od-muted); }
+
+tr.row-status-fixed { background: #0d1f15; }
+tr.row-status-fixed td { border-color: #1c402a; }
+tr.row-status-operator-blocked { background: #220d0c; }
+tr.row-status-operator-blocked td { border-color: #45201e; }
+tr.row-status-obsolete { background: #20242e; color: var(--od-muted); }
+tr.row-status-obsolete td { border-color: #2c313c; }
+
+.tag-done, .tag-completed { background: #0f2a18; color: #6fd497; border-color: #1c4a2c; }
+.tag-in-progress { background: #14233f; color: #88aef7; border-color: #28406a; }
+.tag-future, .tag-planned { background: #2c2208; color: #e3bd55; border-color: #54430f; }
+
+h3.status-group-heading { background: var(--od-accent-tint); color: var(--od-fg); }
+kbd { box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+}
 </style>
 </head>
 <body>
@@ -183,8 +384,8 @@ vertical-align: middle;
 <h3 id="project-rhythm"><strong>Project Rhythm</strong></h3>
 <p><em>Your Music, Your Rhythm</em></p>
 <hr />
-<p><a href="https://android.com"><img role="img" aria-label="Platform" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTAuNzUiIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUExBVEZPUk06IEFORFJPSUQiPjx0aXRsZT5QTEFURk9STTogQU5EUk9JRDwvdGl0bGU+PGcgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iMTA0IiBoZWlnaHQ9IjI4IiBmaWxsPSIjMWE3M2U4Ii8+PHJlY3QgeD0iMTA0IiB3aWR0aD0iODYuNzUiIGhlaWdodD0iMjgiIGZpbGw9IiMzNGE4NTMiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBrRnVaSEp2YVdROEwzUnBkR3hsUGp4d1lYUm9JR1E5SWsweE9DNDBNemsxSURVdU5UVTRObU10TGpZM05TQXhMakUyTmpRdE1TNHpOVElnTWk0ek16RTRMVEl1TURJM05DQXpMalE1T0MwdU1ETTJOaTB1TURFMU5TMHVNRGMwTWkwdU1ESTROaTB1TVRFeE15MHVNRFF6TFRFdU9ESTBPUzB1TmprMU55MHpMalE0TkMwdU9DMDBMalF5TFM0M09EY3RNUzQ0TlRVeExqQXhPRFV0TXk0ek5UUTBMalEyTkRNdE5DNHlOVGszTGpneU1ETXRMakE0TkMwdU1UUTVOQzB4TGpjMU1qWXRNeTR3TWpFdE1pNHdNakUxTFRNdU5EZzJOR0V4TGpFME5URWdNUzR4TkRVeElEQWdNQ0F3TFM0eE5EQTJMUzR4T1RFMFl5MHVNek14TWkwdU16WTBMUzQ1TURVMExTNDBPRFU1TFRFdU16YzVMUzR5TURNdExqUTNOUzR5T0RJdExqY3hNell1T1RNMk1TMHVNemc0TmlBeExqVXdNVGtnTVM0NU5EWTJJRE11TXpZNU5pMHVNRGsyTmkwdU1qRTFPQ0F4TGprME56TWdNeTR6TlRrekxqQXhOekl1TURNeExTNDBPVFEyTGpJMk5ESXRNUzR6T1RJMklERXVNREUzTjBNeUxqZzVPRGNnTVRJdU1UYzJMalExTWlBeE5DNDNOeklnTUNBeE9DNDVPVEF5YURJMFl5MHVNVEU1TFRFdU1URXdPQzB1TXpZNE5pMHlMakE1T1MwdU56UTJNUzB6TGpBMk9ETXRMamMwTXpndE1TNDVNVEU0TFRFdU9EUXpOUzB6TGpJNU1qZ3RNaTQzTkRBeUxUUXVNVGd6Tm1FeE1pNHhNRFE0SURFeUxqRXdORGdnTUNBd0lEQXRNaTR4TXpBNUxURXVOamczTldNdU5qVTVOQzB4TGpFeU1pQXhMak14TWkweUxqSTFOVGtnTVM0NU5qUTVMVE11TXpnME9DNHlNRGMzTFM0ek5qRTFMakU0T0RZdExqYzVOVFl0TGpBd056a3RNUzR4TVRreFlURXVNVEF3TVNBeExqRXdNREVnTUNBd0lEQXRMamcxTVRVdExqVXpNekpqTFM0MU1qSTFMUzR3TlRNMkxTNDVNemt5TGpNeE1qZ3RNUzR3TkRnNExqVTBORGw2YlMwdU1ETTVNU0E0TGpRMk1XTXVNemswTkM0MU9USTJMak15TkNBeExqTXpNRFl0TGpFMU5qTWdNUzQyTlRBekxTNDBOems1TGpNeE9UY3RNUzR4T0RndU1EazROUzB4TGpVNE1pMHVORGswTVMwdU16azBOQzB1TlRreU55MHVNekkwTFRFdU16TXdOeTR4TlRZekxURXVOalV3TkM0ME56STNMUzR6TVRVZ01TNHhPREV5TFM0eE1EZzJJREV1TlRneUxqUTVOREY2VFRjdU1qQTNJREV6TGpVeU56TmpMalE0TURNdU16RTVOeTQxTlRBMklERXVNRFUzTnk0eE5UWXpJREV1TmpVd05DMHVNemswTGpVNU1qWXRNUzR4TURNNExqZ3hNemd0TVM0MU9EUXVORGswTVMwdU5EZ3RMak14T1RjdExqVTFNRE10TVM0d05UYzNMUzR4TlRZekxURXVOalV3TkM0ME1EQTRMUzQyTURJeElERXVNVEE0TnkwdU9ERXdOaUF4TGpVNE5DMHVORGswTVhvaUx6NDhMM04yWno0PSIvPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSI2MDUiIHk9IjE3NSIgdGV4dExlbmd0aD0iNjMwIj5QTEFURk9STTwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iMTQ3My43NSIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSI2MjcuNSIgZm9udC13ZWlnaHQ9ImJvbGQiPkFORFJPSUQ8L3RleHQ+PC9nPjwvc3ZnPg==" alt="Platform" /></a> <a href="https://android-arsenal.com/api?level=26"><img role="img" aria-label="API Level" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEuNSIgaGVpZ2h0PSIyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJBUEk6IDI2KyI+PHRpdGxlPkFQSTogMjYrPC90aXRsZT48ZyBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxyZWN0IHdpZHRoPSI2MS43NSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzU1NSIvPjxyZWN0IHg9IjYxLjc1IiB3aWR0aD0iNDkuNzUiIGhlaWdodD0iMjgiIGZpbGw9IiM0Mjg1ZjQiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBrRnVaSEp2YVdROEwzUnBkR3hsUGp4d1lYUm9JR1E5SWsweE9DNDBNemsxSURVdU5UVTRObU10TGpZM05TQXhMakUyTmpRdE1TNHpOVElnTWk0ek16RTRMVEl1TURJM05DQXpMalE1T0MwdU1ETTJOaTB1TURFMU5TMHVNRGMwTWkwdU1ESTROaTB1TVRFeE15MHVNRFF6TFRFdU9ESTBPUzB1TmprMU55MHpMalE0TkMwdU9DMDBMalF5TFM0M09EY3RNUzQ0TlRVeExqQXhPRFV0TXk0ek5UUTBMalEyTkRNdE5DNHlOVGszTGpneU1ETXRMakE0TkMwdU1UUTVOQzB4TGpjMU1qWXRNeTR3TWpFdE1pNHdNakUxTFRNdU5EZzJOR0V4TGpFME5URWdNUzR4TkRVeElEQWdNQ0F3TFM0eE5EQTJMUzR4T1RFMFl5MHVNek14TWkwdU16WTBMUzQ1TURVMExTNDBPRFU1TFRFdU16YzVMUzR5TURNdExqUTNOUzR5T0RJdExqY3hNell1T1RNMk1TMHVNemc0TmlBeExqVXdNVGtnTVM0NU5EWTJJRE11TXpZNU5pMHVNRGsyTmkwdU1qRTFPQ0F4TGprME56TWdNeTR6TlRrekxqQXhOekl1TURNeExTNDBPVFEyTGpJMk5ESXRNUzR6T1RJMklERXVNREUzTjBNeUxqZzVPRGNnTVRJdU1UYzJMalExTWlBeE5DNDNOeklnTUNBeE9DNDVPVEF5YURJMFl5MHVNVEU1TFRFdU1URXdPQzB1TXpZNE5pMHlMakE1T1MwdU56UTJNUzB6TGpBMk9ETXRMamMwTXpndE1TNDVNVEU0TFRFdU9EUXpOUzB6TGpJNU1qZ3RNaTQzTkRBeUxUUXVNVGd6Tm1FeE1pNHhNRFE0SURFeUxqRXdORGdnTUNBd0lEQXRNaTR4TXpBNUxURXVOamczTldNdU5qVTVOQzB4TGpFeU1pQXhMak14TWkweUxqSTFOVGtnTVM0NU5qUTVMVE11TXpnME9DNHlNRGMzTFM0ek5qRTFMakU0T0RZdExqYzVOVFl0TGpBd056a3RNUzR4TVRreFlURXVNVEF3TVNBeExqRXdNREVnTUNBd0lEQXRMamcxTVRVdExqVXpNekpqTFM0MU1qSTFMUzR3TlRNMkxTNDVNemt5TGpNeE1qZ3RNUzR3TkRnNExqVTBORGw2YlMwdU1ETTVNU0E0TGpRMk1XTXVNemswTkM0MU9USTJMak15TkNBeExqTXpNRFl0TGpFMU5qTWdNUzQyTlRBekxTNDBOems1TGpNeE9UY3RNUzR4T0RndU1EazROUzB4TGpVNE1pMHVORGswTVMwdU16azBOQzB1TlRreU55MHVNekkwTFRFdU16TXdOeTR4TlRZekxURXVOalV3TkM0ME56STNMUzR6TVRVZ01TNHhPREV5TFM0eE1EZzJJREV1TlRneUxqUTVOREY2VFRjdU1qQTNJREV6TGpVeU56TmpMalE0TURNdU16RTVOeTQxTlRBMklERXVNRFUzTnk0eE5UWXpJREV1TmpVd05DMHVNemswTGpVNU1qWXRNUzR4TURNNExqZ3hNemd0TVM0MU9EUXVORGswTVMwdU5EZ3RMak14T1RjdExqVTFNRE10TVM0d05UYzNMUzR4TlRZekxURXVOalV3TkM0ME1EQTRMUzQyTURJeElERXVNVEE0TnkwdU9ERXdOaUF4TGpVNE5DMHVORGswTVhvaUx6NDhMM04yWno0PSIvPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSIzOTMuNzUiIHk9IjE3NSIgdGV4dExlbmd0aD0iMjA3LjUiPkFQSTwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iODY2LjI1IiB5PSIxNzUiIHRleHRMZW5ndGg9IjI1Ny41IiBmb250LXdlaWdodD0iYm9sZCI+MjYrPC90ZXh0PjwvZz48L3N2Zz4=" alt="API Level" /></a> <a href="https://kotlinlang.org/"><img role="img" aria-label="Kotlin" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDkuNSIgaGVpZ2h0PSIyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJLT1RMSU46IDEwMCUiPjx0aXRsZT5LT1RMSU46IDEwMCU8L3RpdGxlPjxnIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+PHJlY3Qgd2lkdGg9Ijg2LjUiIGhlaWdodD0iMjgiIGZpbGw9IiM1NTUiLz48cmVjdCB4PSI4Ni41IiB3aWR0aD0iNjMiIGhlaWdodD0iMjgiIGZpbGw9IiM3YzRkZmYiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBrdHZkR3hwYmp3dmRHbDBiR1UrUEhCaGRHZ2daRDBpVFRJMElESTBTREJXTUdneU5Fd3hNaUF4TWxvaUx6NDhMM04yWno0PSIvPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSI1MTcuNSIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSI0NTUiPktPVExJTjwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iMTE4MCIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSIzOTAiIGZvbnQtd2VpZ2h0PSJib2xkIj4xMDAlPC90ZXh0PjwvZz48L3N2Zz4=" alt="Kotlin" /></a> <a href="docs/LICENSE"><img role="img" aria-label="License" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDYuMjUiIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTElDRU5TRTogR1BMIFYzIj48dGl0bGU+TElDRU5TRTogR1BMIFYzPC90aXRsZT48ZyBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxyZWN0IHdpZHRoPSI3NS43NSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzU1NSIvPjxyZWN0IHg9Ijc1Ljc1IiB3aWR0aD0iNzAuNSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzQyODVmNCIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iVmVyZGFuYSxHZW5ldmEsRGVqYVZ1IFNhbnMsc2Fucy1zZXJpZiIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgZm9udC1zaXplPSIxMDAiPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSIzNzguNzUiIHk9IjE3NSIgdGV4dExlbmd0aD0iNTE3LjUiPkxJQ0VOU0U8L3RleHQ+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjExMTAiIHk9IjE3NSIgdGV4dExlbmd0aD0iNDY1IiBmb250LXdlaWdodD0iYm9sZCI+R1BMIFYzPC90ZXh0PjwvZz48L3N2Zz4=" alt="License" /></a></p>
-<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img role="img" aria-label="Release" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNzIuNzUiIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUkVMRUFTRTogVjUuMC40MDMuMTA1NC1TVEFCTEUiPjx0aXRsZT5SRUxFQVNFOiBWNS4wLjQwMy4xMDU0LVNUQUJMRTwvdGl0bGU+PGcgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iOTQuNzUiIGhlaWdodD0iMjgiIGZpbGw9IiM1NTUiLz48cmVjdCB4PSI5NC43NSIgd2lkdGg9IjE3OCIgaGVpZ2h0PSIyOCIgZmlsbD0iIzY3M2FiNyIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iVmVyZGFuYSxHZW5ldmEsRGVqYVZ1IFNhbnMsc2Fucy1zZXJpZiIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgZm9udC1zaXplPSIxMDAiPjxpbWFnZSB4PSI5IiB5PSI3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGhyZWY9ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5Qm1hV3hzUFNKM2FHbDBaU0lnY205c1pUMGlhVzFuSWlCMmFXVjNRbTk0UFNJd0lEQWdNalFnTWpRaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BIUnBkR3hsUGtkcGRFaDFZand2ZEdsMGJHVStQSEJoZEdnZ1pEMGlUVEV5SUM0eU9UZGpMVFl1TmpNZ01DMHhNaUExTGpNM015MHhNaUF4TWlBd0lEVXVNekF6SURNdU5ETTRJRGt1T0NBNExqSXdOU0F4TVM0ek9EVXVOaTR4TVRNdU9ESXRMakkxT0M0NE1pMHVOVGMzSURBdExqSTROUzB1TURFdE1TNHdOQzB1TURFMUxUSXVNRFF0TXk0ek16Z3VOekkwTFRRdU1EUXlMVEV1TmpFdE5DNHdOREl0TVM0Mk1VTTBMalF5TWlBeE9DNHdOeUF6TGpZek15QXhOeTQzSURNdU5qTXpJREUzTGpkakxURXVNRGczTFM0M05EUXVNRGcwTFM0M01qa3VNRGcwTFM0M01qa2dNUzR5TURVdU1EZzBJREV1T0RNNElERXVNak0ySURFdU9ETTRJREV1TWpNMklERXVNRGNnTVM0NE16VWdNaTQ0TURrZ01TNHpNRFVnTXk0ME9UVXVPVGs0TGpFd09DMHVOemMyTGpReE55MHhMak13TlM0M05pMHhMall3TlMweUxqWTJOUzB1TXkwMUxqUTJOaTB4TGpNek1pMDFMalEyTmkwMUxqa3pJREF0TVM0ek1TNDBOalV0TWk0ek9DQXhMakl6TlMwekxqSXlMUzR4TXpVdExqTXdNeTB1TlRRdE1TNDFNak11TVRBMUxUTXVNVGMySURBZ01DQXhMakF3TlMwdU16SXlJRE11TXlBeExqSXpMamsyTFM0eU5qY2dNUzQ1T0MwdU16azVJRE10TGpRd05TQXhMakF5TGpBd05pQXlMakEwTGpFek9DQXpJQzQwTURVZ01pNHlPQzB4TGpVMU1pQXpMakk0TlMweExqSXpJRE11TWpnMUxURXVNak11TmpRMUlERXVOalV6TGpJMElESXVPRGN6TGpFeUlETXVNVGMyTGpjMk5TNDROQ0F4TGpJeklERXVPVEVnTVM0eU15QXpMakl5SURBZ05DNDJNUzB5TGpnd05TQTFMall5TlMwMUxqUTNOU0ExTGpreUxqUXlMak0yTGpneElERXVNRGsyTGpneElESXVNaklnTUNBeExqWXdOaTB1TURFMUlESXVPRGsyTFM0d01UVWdNeTR5T0RZZ01DQXVNekUxTGpJeExqWTVMamd5TlM0MU4wTXlNQzQxTmpVZ01qSXVNRGt5SURJMElERTNMalU1TWlBeU5DQXhNaTR5T1Rkak1DMDJMall5TnkwMUxqTTNNeTB4TWkweE1pMHhNaUl2UGp3dmMzWm5QZz09Ii8+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjU1OC43NSIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSI1MzcuNSI+UkVMRUFTRTwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iMTgzNy41IiB5PSIxNzUiIHRleHRMZW5ndGg9IjE1NDAiIGZvbnQtd2VpZ2h0PSJib2xkIj5WNS4wLjQwMy4xMDU0LVNUQUJMRTwvdGV4dD48L2c+PC9zdmc+" alt="Release" /></a> <a href="https://github.com/cromaguy/Rhythm/releases"><img role="img" aria-label="Downloads" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTEiIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iRE9XTkxPQURTOiA2OUsiPjx0aXRsZT5ET1dOTE9BRFM6IDY5SzwvdGl0bGU+PGcgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iMTAyLjI1IiBoZWlnaHQ9IjI4IiBmaWxsPSIjNTU1Ii8+PHJlY3QgeD0iMTAyLjI1IiB3aWR0aD0iNDguNzUiIGhlaWdodD0iMjgiIGZpbGw9IiMwMGJjZDQiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iNTExLjI1IiB5PSIxNzUiIHRleHRMZW5ndGg9Ijc4Mi41Ij5ET1dOTE9BRFM8L3RleHQ+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjEyNjYuMjUiIHk9IjE3NSIgdGV4dExlbmd0aD0iMjQ3LjUiIGZvbnQtd2VpZ2h0PSJib2xkIj42OUs8L3RleHQ+PC9nPjwvc3ZnPg==" alt="Downloads" /></a> <a href="https://github.com/cromaguy/Rhythm/stargazers"><img role="img" aria-label="Stars" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIiIGhlaWdodD0iMjgiPjxnIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+PHJlY3Qgd2lkdGg9IjYzLjI1IiBoZWlnaHQ9IjI4IiBmaWxsPSIjNTU1Ii8+PHJlY3QgeD0iNjMuMjUiIHdpZHRoPSI0OC43NSIgaGVpZ2h0PSIyOCIgZmlsbD0iI2ZmYzEwNyIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iVmVyZGFuYSxHZW5ldmEsRGVqYVZ1IFNhbnMsc2Fucy1zZXJpZiIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgZm9udC1zaXplPSIxMDAiPjxhIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vY3JvbWFndXkvUmh5dGhtIj48cmVjdCB3aWR0aD0iNjMuMjUiIGhlaWdodD0iMjgiIGZpbGw9InJnYmEoMCwwLDAsMCkiLz48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iMzE2LjI1IiB5PSIxNzUiIHRleHRMZW5ndGg9IjM5Mi41Ij5TVEFSUzwvdGV4dD48L2E+PGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHBzOi8vZ2l0aHViLmNvbS9jcm9tYWd1eS9SaHl0aG0vc3RhcmdhemVycyI+PHJlY3Qgd2lkdGg9IjQ4Ljc1IiBoZWlnaHQ9IjI4IiB4PSI2My4yNSIgZmlsbD0icmdiYSgwLDAsMCwwKSIvPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSI4NzYuMjUiIHk9IjE3NSIgdGV4dExlbmd0aD0iMjQ3LjUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMzMzIj42ODY8L3RleHQ+PC9hPjwvZz48L3N2Zz4=" alt="Stars" /></a> <a href="https://shields.rbtlog.dev/chromahub.rhythm.app"><img role="img" aria-label="RB shield" src="data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzEyIiBoZWlnaHQ9IjI4Ij4KICAgIDxnIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjE5MSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzU1NSIvPgogICAgICAgIDxyZWN0IHg9IjE5MSIgd2lkdGg9IjEyMSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzY0RjU3MyIvPgogICAgPC9nPgogICAgPGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGxldHRlci1zcGFjaW5nPSIxLjEiPgogICAgICAgIDx0ZXh0IHg9Ijk1IiB5PSIxNy41IiBmaWxsPSIjZmZmIj41LjAuNDAzLjEwNTQtRkRST0lEPC90ZXh0PgogICAgICAgIDx0ZXh0IHg9IjI1MSIgeT0iMTcuNSIgZmlsbD0iIzMzMyIgZm9udC13ZWlnaHQ9ImJvbGQiPlJFUFJPRFVDSUJMRTwvdGV4dD4KICAgIDwvZz4KPC9zdmc+" alt="RB shield"></a></p>
+<p><a href="https://android.com"><img role="img" aria-label="Platform" src="https://img.shields.io/badge/Platform-Android-34A853?style=for-the-badge&amp;logo=android&amp;logoColor=white&amp;labelColor=1a73e8" alt="Platform" /></a> <a href="https://android-arsenal.com/api?level=26"><img role="img" aria-label="API Level" src="https://img.shields.io/badge/API-26%2B-4285f4?style=for-the-badge&amp;logo=android&amp;logoColor=white" alt="API Level" /></a> <a href="https://kotlinlang.org/"><img role="img" aria-label="Kotlin" src="https://img.shields.io/badge/Kotlin-100%25-7c4dff?style=for-the-badge&amp;logo=kotlin&amp;logoColor=white" alt="Kotlin" /></a> <a href="docs/LICENSE"><img role="img" aria-label="License" src="https://img.shields.io/badge/License-GPL%20v3-4285f4?style=for-the-badge" alt="License" /></a></p>
+<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img role="img" aria-label="Release" src="https://img.shields.io/github/v/release/cromaguy/Rhythm?style=for-the-badge&amp;logo=github&amp;color=673ab7&amp;logoColor=white" alt="Release" /></a> <a href="https://github.com/cromaguy/Rhythm/releases"><img role="img" aria-label="Downloads" src="https://img.shields.io/github/downloads/cromaguy/Rhythm/total?style=for-the-badge&amp;logo=download&amp;color=00bcd4&amp;logoColor=white" alt="Downloads" /></a> <a href="https://github.com/cromaguy/Rhythm/stargazers"><img role="img" aria-label="Stars" src="https://img.shields.io/github/stars/cromaguy/Rhythm?style=for-the-badge&amp;logo=star&amp;color=ffc107&amp;logoColor=white" alt="Stars" /></a> <a href="https://shields.rbtlog.dev/chromahub.rhythm.app"><img role="img" aria-label="RB shield" src="https://shields.rbtlog.dev/simple/chromahub.rhythm.app?style=for-the-badge" alt="RB shield"></a></p>
 <hr />
 <h3 id="globe_with_meridians-website--inbox_tray-download--speech_balloon-telegram--open_book-wiki">🌐
 <a href="https://rhythmweb.vercel.app/">Website</a> | 📥 <a href="https://github.com/cromaguy/Rhythm/releases/latest">Download</a> |
@@ -493,7 +694,7 @@ Source</a></td>
 Ready to Transform Your Music Experience? 🎵</h2>
 <br>
 
-<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img role="img" aria-label="Download Now" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNzkuMjUiIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0i8J+TsSBET1dOTE9BRCBOT1c6IEdFVCBMQVRFU1QgQVBLIj48dGl0bGU+8J+TsSBET1dOTE9BRCBOT1c6IEdFVCBMQVRFU1QgQVBLPC90aXRsZT48ZyBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxyZWN0IHdpZHRoPSIxNDQuNzUiIGhlaWdodD0iMjgiIGZpbGw9IiM1NTUiLz48cmVjdCB4PSIxNDQuNzUiIHdpZHRoPSIxMzQuNSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzRjYWY1MCIvPjwvZz48ZyBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iVmVyZGFuYSxHZW5ldmEsRGVqYVZ1IFNhbnMsc2Fucy1zZXJpZiIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgZm9udC1zaXplPSIxMDAiPjx0ZXh0IHRyYW5zZm9ybT0ic2NhbGUoLjEpIiB4PSI3MjMuNzUiIHk9IjE3NSIgdGV4dExlbmd0aD0iMTIwNy41Ij7wn5OxIERPV05MT0FEIE5PVzwvdGV4dD48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iMjEyMCIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSIxMTA1IiBmb250LXdlaWdodD0iYm9sZCI+R0VUIExBVEVTVCBBUEs8L3RleHQ+PC9nPjwvc3ZnPg==" alt="Download Now" /></a> <a href="https://t.me/RhythmSupport"><img role="img" aria-label="Join Community" src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjciIGhlaWdodD0iMjgiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0i8J+SrCBKT0lOIFRFTEVHUkFNOiBHRVQgSEVMUCI+PHRpdGxlPvCfkqwgSk9JTiBURUxFR1JBTTogR0VUIEhFTFA8L3RpdGxlPjxnIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+PHJlY3Qgd2lkdGg9IjEzOSIgaGVpZ2h0PSIyOCIgZmlsbD0iIzU1NSIvPjxyZWN0IHg9IjEzOSIgd2lkdGg9Ijg4IiBoZWlnaHQ9IjI4IiBmaWxsPSIjMDA4OGNjIi8+PC9nPjxnIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJWZXJkYW5hLEdlbmV2YSxEZWphVnUgU2FucyxzYW5zLXNlcmlmIiB0ZXh0LXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIiBmb250LXNpemU9IjEwMCI+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjY5NSIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSIxMTUwIj7wn5KsIEpPSU4gVEVMRUdSQU08L3RleHQ+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjE4MzAiIHk9IjE3NSIgdGV4dExlbmd0aD0iNjQwIiBmb250LXdlaWdodD0iYm9sZCI+R0VUIEhFTFA8L3RleHQ+PC9nPjwvc3ZnPg==" alt="Join Community" /></a></p>
+<p><a href="https://github.com/cromaguy/Rhythm/releases/latest"><img role="img" aria-label="Download Now" src="https://img.shields.io/badge/📱_Download_Now-Get_Latest_APK-4caf50?style=for-the-badge&amp;logoColor=white" alt="Download Now" /></a> <a href="https://t.me/RhythmSupport"><img role="img" aria-label="Join Community" src="https://img.shields.io/badge/💬_Join_Telegram-Get_Help-0088cc?style=for-the-badge&amp;logoColor=white" alt="Join Community" /></a></p>
 <p><br><br></p>
 <h3 id="sparkles-made-with-heart-by-team-chromahub-sparkles">✨ Made
 with ❤️ by Team ChromaHub ✨</h3>
